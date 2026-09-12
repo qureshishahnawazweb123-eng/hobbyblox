@@ -534,4 +534,5 @@ label.lbl{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-tra
   .rating-sum{grid-template-columns:1fr}
   .signup .wrap{padding-block:1.5rem}
   .field-row .input{min-width:0;flex:1}
+   .photo-frame img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
 }
