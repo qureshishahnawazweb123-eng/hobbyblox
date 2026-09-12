@@ -128,7 +128,7 @@ p{margin:0}
 /* Brand preview mega menu */
 .mega{position:absolute;left:0;right:0;top:100%;padding-top:6px;opacity:0;visibility:hidden;translate:0 6px;transition:opacity .18s ease,translate .18s ease,visibility .18s}
 .nav li:hover>.mega,.nav li:focus-within>.mega{opacity:1;visibility:visible;translate:0 0}
-.mega-in{background:var(--charcoal-2);border:1px solid var(--line-dark);box-shadow:var(--shadow);width:min(920px,calc(100vw - 32px));display:grid;grid-template-columns:repeat(4,1fr);column-gap:.75rem;row-gap:1px;background:var(--charcoal-2);border-radius:3px;overflow:hidden;margin-inline:auto}
+.mega-in{background:var(--charcoal-2);border:1px solid var(--line-dark);box-shadow:var(--shadow);width:min(100%,calc(100vw - 32px));display:grid;grid-template-columns:repeat(4,1fr);column-gap:.75rem;row-gap:1px;background:var(--charcoal-2);border-radius:3px;overflow:hidden;margin-inline:auto}
 .mega-in a{display:block;background:var(--charcoal-2);padding:0 0 1rem;text-decoration:none;color:var(--ivory);border:0;letter-spacing:0;font-family:var(--body);text-transform:none;opacity:1;font-size:.9rem}
 .mega-in a:hover{background:#26262E;border:0}
 .mega-in a img{width:100%;height:145px;object-fit:cover;filter:saturate(.95)}
