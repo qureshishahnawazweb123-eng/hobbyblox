@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>HobbyBlox Storefront</title>
+<meta name="description" content="HobbyBlox creating immersive worlds for hobbyists. Clickable Shopify prototype, round 2.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== ANNOUNCEMENT ===================== -->
+<div class="bar">Own a hobby store or an indoor crawling space? <a href="#/venues">Become a MountainBlox dealer →</a></div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#/" aria-label="HobbyBlox home"><img src="img/logo-hobbyblox-dark.png" alt="HobbyBlox"></a>
+    <ul class="nav" id="nav">
+      <li><a href="#/about" data-nav="about">About</a></li>
+      <li>
+        <a href="#/brands" data-nav="brands" aria-haspopup="true">Our Brands <svg class="chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3l4 4 4-4"/></svg></a>
+        <div class="mega">
+          <div class="mega-in">
+            <a href="#/mountainblox"><img src="img/photo-starry-disco.jpg" alt=""><div class="mm-body"><span class="pill available">Available now</span><span class="mm-name">MountainBlox</span><span class="mm-sub">RC crawler terrain · 1/24 &amp; 1/18 scale</span></div></a>
+            <a href="#/fingerblox"><img src="img/card-fbx.jpg" alt=""><div class="mm-body"><span class="pill dev">Under development</span><span class="mm-name">FingerBlox</span><span class="mm-sub">Fingerboard pools &amp; terrain</span></div></a>
+            <a href="#/driftingblox"><img src="img/card-dbx.jpg" alt=""><div class="mm-body"><span class="pill dev">Under development</span><span class="mm-name">DriftingBlox</span><span class="mm-sub">RC drift courses</span></div></a>
+            <a href="#/brands"><img src="img/card-rbx.jpg" alt=""><div class="mm-body"><span class="pill future">Future brands</span><span class="mm-name">What's next</span><span class="mm-sub">RailwayBlox, QuarryBlox and more</span></div></a>
+            <div class="mega-foot"><a class="link" href="#/league">MountainBlox League →</a><a class="link" href="#/brands">See the whole HobbyBlox family →</a></div>
+          </div>
+        </div>
+      </li>
+      <li><a href="#/shop" data-nav="shop">Shop</a></li>
+      <li><a href="#/instructions" data-nav="instructions">Instruction Center</a></li>
+      <li><a href="#/gallery" data-nav="gallery">Gallery</a></li>
+      <li><a href="#/reviews" data-nav="reviews">Reviews</a></li>
+      <li><a href="#/venues" data-nav="venues">Hobby Stores &amp; Venues</a></li>
+      <li><a href="#/contact" data-nav="contact">Contact</a></li>
+    </ul>
+    <div class="icons">
+      <button type="button" aria-label="Search" data-toast="Search opens the Shopify predictive search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+      <button type="button" class="acct" aria-label="Account" data-toast="Account opens Shopify customer login"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></button>
+      <button type="button" aria-label="Cart" data-toast="Cart drawer 0 items"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 016 0"/></svg></button>
+    </div>
+    <button class="burger" type="button" id="burger" aria-label="Open menu"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-top"><img src="img/logo-hobbyblox-dark.png" alt="HobbyBlox" style="height:50px;width:auto"><button type="button" class="mono" id="drawer-close">Close ✕</button></div>
+  <ul>
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/about">About</a></li>
+    <li><a href="#/brands">Our Brands</a>
+      <ul class="sub">
+        <li><a href="#/mountainblox">MountainBlox Available now</a></li>
+        <li><a href="#/fingerblox">FingerBlox Under development</a></li>
+        <li><a href="#/driftingblox">DriftingBlox Under development</a></li>
+        <li><a href="#/league">MountainBlox League</a></li>
+      </ul>
+    </li>
+    <li><a href="#/shop">Shop</a></li>
+    <li><a href="#/instructions">Instruction Center</a></li>
+    <li><a href="#/gallery">Gallery</a></li>
+    <li><a href="#/reviews">Reviews</a></li>
+    <li><a href="#/venues">Hobby Stores &amp; Venues</a></li>
+    <li><a href="#/contact">Contact</a></li>
+  </ul>
+</div>
+
+<main id="app">
+
+<!-- ===================== HOME ===================== -->
+<section class="page" data-route="/" id="page-home">
+
+  <!-- Rotating hero -->
+  <section class="hero" id="hero" aria-roledescription="carousel" aria-label="HobbyBlox highlights">
+    <div class="slides" id="slides">
+
+      <!-- Slide 1 · HobbyBlox -->
+      <div class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 4 HobbyBlox">
+        <div class="slide-bg" style="background-image:url(img/hero-bg-1.jpg)"></div>
+        <div class="wrap slide-in">
+          <div class="slide-text">
+            <span class="eyebrow">HobbyBlox</span>
+            <h2 class="h2">Creating immersive worlds for hobbyists</h2>
+            <p class="lede">From rugged crawling landscapes to miniature skate pools and beyond terrain that brings your favorite hobby to life.</p>
+            <div class="cta-row"><a class="btn btn-primary" href="#/brands">Explore our brands →</a></div>
+          </div>
+          <div class="slide-visual"><img src="img/render-lava.png" alt="MountainBlox terrain layout with a lava-themed peak, tunnels and bridges" width="1270" height="928"></div>
+        </div>
+      </div>
+
+      <!-- Slide 2 · MountainBlox -->
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4 MountainBlox">
+        <div class="slide-bg" style="background-image:url(img/hero-bg-2.jpg)"></div>
+        <div class="wrap slide-in">
+          <div class="slide-text">
+            <span class="pill available">Available now · Ships from the USA</span>
+            <img class="brandmark" src="img/logo-mbx-dark.png" alt="MountainBlox" width="970" height="98">
+            <p class="lede">Build rugged terrain for your RC crawler, rearrange it for fresh challenges, and expand your world over time. Then join the MountainBlox League and compete with drivers around the world.</p>
+            <div class="cta-row"><a class="btn btn-primary" href="#/mountainblox">Explore MountainBlox →</a><a class="btn btn-outline" href="#/shop">Shop sets</a></div>
+          </div>
+          <div class="slide-visual"><img src="img/render-scramble.png" alt="Squatch Mountain Set built as the Highland Scramble layout" width="1500" height="910"></div>
+        </div>
+      </div>
+
+      <!-- Slide 3 · MountainBlox League -->
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4 MountainBlox League">
+        <div class="slide-bg" style="background-image:url(img/hero-bg-3.jpg)"></div>
+        <div class="wrap slide-in">
+          <div class="slide-text">
+            <img class="brandmark league" src="img/logo-league.png" alt="MountainBlox League" width="1172" height="303">
+            <p class="tagline">Your terrain. Your challenge. Your league.</p>
+            <p class="lede">Turn your MountainBlox layout into a competition arena. Take on official routes, submit your timed runs, and see how you stack up against drivers across the country and around the world.</p>
+            <div class="cta-row"><a class="btn btn-primary" href="#/league">Explore the League →</a></div>
+          </div>
+          <div class="slide-visual"><img src="img/render-gates.png" alt="Official League route marked with gates 1 through 5 and a finish gate" width="1700" height="849"></div>
+        </div>
+      </div>
+
+      <!-- Slide 4 · Hobby stores & FECs -->
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4 Hobby stores and family entertainment centers">
+        <div class="slide-bg" style="background-image:url(img/hero-bg-4.jpg)"></div>
+        <div class="wrap slide-in">
+          <div class="slide-text">
+            <span class="eyebrow">Hobby stores &amp; family entertainment centers</span>
+            <h2 class="h1 h1-sm">Make your location a hobby destination</h2>
+            <p class="lede">Bring customers together around an immersive MountainBlox landscape. Create fresh challenges, host competitions through the MountainBlox League, and give people reasons to stay longer and come back for more.</p>
+            <div class="cta-row"><a class="btn btn-primary" href="#/venues">Business opportunities →</a></div>
+          </div>
+          <div class="slide-visual"><div class="framed"><img src="img/slide-4.png" alt="Families and hobbyists driving RC crawlers on a MountainBlox installation inside a hobby store" width="585" height="451"></div></div>
+        </div>
+      </div>
+    <!-- Visible controls: prev / dots / next / pause -->
+    <div class="hero-ctl">
+      <div class="wrap">
+        <button type="button" id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="dots" id="dots" role="tablist" aria-label="Choose slide"></div>
+        <button type="button" id="next" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+        <button type="button" id="pause" aria-label="Pause rotation" aria-pressed="false"><svg id="ico-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg><svg id="ico-play" viewBox="0 0 24 24" hidden><path d="M7 4l13 8-13 8z"/></svg></button>
+        <span class="slide-count" id="count">01 / 04</span>
+      </div>
+    </div>
+
+    </div>
+
+    <!-- Stationary Blox definition (replaces the MBX spec row) -->
+    <div class="blox-def">
+      <div class="wrap">
+        <p><b>Blox</b> are terrain pieces that come together to create immersive worlds for your hobby.</p>
+        <span class="sub">We make the terrain. You bring the crawler, the fingerboard and the imagination.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scrolling statement -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marquee">
+      <span>Build your world</span><span>Bring your hobby to life</span><span>Create your next challenge</span><span>Join a Blox League</span><span>The terrain that connects us</span>
+      <span>Build your world</span><span>Bring your hobby to life</span><span>Create your next challenge</span><span>Join a Blox League</span><span>The terrain that connects us</span>
+    </div>
+  </div>
+
+  <!-- Brand cards -->
+  <section class="section on-light" id="home-brands">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Our brands</span>
+        <h2 class="h2">Different hobbies. Different Blox. Endless possibilities.</h2>
+        <p class="lede">Discover MountainBlox terrain for RC crawling today, and preview the hobby worlds coming next. See something you love? Sign up for updates as we bring it to life.</p>
+      </div>
+      <div class="grid grid-5">
+        <a class="brand-card" href="#/mountainblox">
+          <div class="media"><img src="img/card-mbx.jpg" alt="Squatch Mountain Set built as Bridge City, Appalachian Ridge style"></div>
+          <div class="body"><span class="pill available">Available now</span><span class="name">MountainBlox</span><span class="sub">RC crawler terrain</span><span class="link ember">Shop MountainBlox →</span></div>
+        </a>
+        <a class="brand-card" href="#/fingerblox">
+          <div class="media"><img src="img/card-fbx.jpg" alt="FingerBlox Clover Bowl concept render"><span class="tag">Concept render</span></div>
+          <div class="body"><span class="pill dev">Under development</span><span class="name">FingerBlox</span><span class="sub">Fingerboard pools</span><span class="link">Get notified →</span></div>
+        </a>
+        <a class="brand-card" href="#/driftingblox">
+          <div class="media"><img src="img/card-dbx.jpg" alt="DriftingBlox concept course"><span class="tag">Concept imagery</span></div>
+          <div class="body"><span class="pill dev">Under development</span><span class="name">DriftingBlox</span><span class="sub">RC drift courses</span><span class="link">Get notified →</span></div>
+        </a>
+        <a class="brand-card future" href="#/brands">
+          <div class="media"><img src="img/card-rbx.jpg" alt="RailwayBlox concept scene"><span class="tag">Concept imagery</span></div>
+          <div class="body"><span class="pill future">Future brand</span><span class="name">RailwayBlox</span><span class="sub">Model railroad environments</span><span class="link">Get notified →</span></div>
+        </a>
+        <a class="brand-card future" href="#/brands">
+          <div class="media"><img src="img/card-qbx.jpg" alt="QuarryBlox concept scene"><span class="tag">Concept imagery</span></div>
+          <div class="body"><span class="pill future">Future brand</span><span class="name">QuarryBlox</span><span class="sub">RC construction terrain</span><span class="link">Get notified →</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MountainBlox in action -->
+  <section class="section on-white" id="home-mbx">
+    <div class="wrap split">
+      <div class="stack">
+        <span class="eyebrow">MountainBlox · Available now</span>
+        <h2 class="h2">Bring your crawling world to life.</h2>
+        <p class="lede">Create a realistic landscape for your RC crawler with MountainBlox terrain. Arrange your Blox, build bigger climbs, and change the challenge whenever you want. Start small and expand your world over time. Then join the MountainBlox League and put your skills to the test against fellow crawlers across the country and around the world.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="#/shop">Shop MountainBlox →</a><a class="btn btn-outline" href="#/league">Explore the League →</a></div>
+        <div class="facts"><span>1/24 &amp; 1/18 scale crawlers</span><span>Snap together, no tools</span><span>Made in the USA</span></div>
+      </div>
+      <div class="collage frame">
+        <figure class="c1"><img src="img/photo-starry-disco.jpg" alt="Yellow 1/24 scale Land Rover climbing MountainBlox terrain under a night-sky backdrop"><figcaption>Real MountainBlox terrain</figcaption></figure>
+        <figure class="c2"><img src="img/photo-rocks-tree.jpg" alt="Crawler picking a line over painted rock Blox with a pine tree"></figure>
+        <figure class="c3"><img src="img/photo-sunset-climb.jpg" alt="Crawler cresting a ridge against a sunset backdrop"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hobby stores & FECs -->
+  <section class="section on-dark" id="home-venues">
+    <div class="wrap split rev">
+      <div class="stack">
+        <span class="eyebrow">Hobby stores &amp; venues</span>
+        <h2 class="h2">Make your location a hobby destination.</h2>
+        <p class="lede muted">A permanent MountainBlox landscape turns a hobby shop, RC store or family entertainment center into the place crawlers come back to.</p>
+        <div class="venue-points">
+          <div class="point"><b>Larger terrain installations</b><span>Table size courses built from Squatch Mountain Sets rearranged whenever you want a new look.</span></div>
+          <div class="point"><b>Repeat visits</b><span>Fresh climbs and new routes give customers a reason to return every week.</span></div>
+          <div class="point"><b>Events &amp; crawl nights</b><span>Host build sessions, demo days and timed challenges in store.</span></div>
+          <div class="point"><b>League opportunities</b><span>Become an official MountainBlox League venue and run sanctioned runs.</span></div>
+        </div>
+        <div class="cta-row"><a class="btn btn-primary" href="#/venues">Business opportunities →</a><a class="link" href="#/contact">Talk to us</a></div>
+      </div>
+      <div class="photo-frame frame"><img src="img/slide-4.png" alt="Hobby store customers gathered around a MountainBlox installation"><span class="cap">Real installation · hobby store</span></div>
+    </div>
+  </section>
+
+  <!-- Email signup -->
+  <section class="signup">
+    <div class="wrap">
+      <div class="stack" style="gap:.35rem"><h3 class="h3">Be first to know when new Blox drop</h3><p class="small muted">Launch news, layouts and League updates. No noise.</p></div>
+      <form class="field-row" data-toast="Thanks you're on the list (prototype)"><label class="sr" for="home-email">Email</label><input class="input" id="home-email" type="email" placeholder="you@example.com" required><button class="btn btn-primary" type="submit">Get updates</button></form>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="page" data-route="/about">
+  <section class="page-hero compact">
+    <div class="bg" style="background-image:url(img/bg-night-2.jpg)"></div>
+    <div class="wrap">
+      <div class="slide-text">
+        <div class="crumbs"><a href="#/">Home</a><span>/</span><span>About HobbyBlox</span></div>
+        <h1 class="h1">The company behind the Blox</h1>
+        <p class="lede">HobbyBlox designs and manufactures terrain pieces Blox that come together to create immersive worlds for hobbyists. One growing family of hobby brands, each built for the way its community plays.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-light">
+    <div class="wrap split">
+      <div class="stack copy">
+        <span class="eyebrow">Where it started</span>
+        <h2 class="h2">Born on a crawler course.</h2>
+        <p>MountainBlox came first built by a designer who was tired of spraying foam and painting cardboard every time he wanted a new indoor course. He wanted terrain that looked real, set up in minutes, and could be rearranged whenever the challenge got stale.</p>
+        <p>That idea became MountainBlox: realistic, portable RC crawler terrain that snaps together without tools. It also became a way of thinking about every hobby that lives on a landscape. RC crawling is better together and so is building the world it happens in.</p>
+        <p>HobbyBlox is that idea, grown up. MountainBlox is available today. FingerBlox and DriftingBlox are in development. More Blox brands are on the drawing board.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="#/brands">Meet the brands →</a></div>
+      </div>
+      <div class="photo-frame frame"><img src="img/photo-ridge-sunset.jpg" alt="RC crawler on a MountainBlox ridge against a painted sunset"><span class="cap">MountainBlox, where HobbyBlox began</span></div>
+    </div>
+  </section>
+
+  <section class="section on-white">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">What we make</span>
+        <h2 class="h2">Terrain. Not vehicles. Not venues.</h2>
+        <p class="lede">Blox are the landscape your hobby happens on. Each Blox brand is engineered for its own hobby some pieces stack and interlock, others are purpose-shaped forms but every one is designed to be arranged, expanded and rebuilt.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card"><div class="icon-ring"><svg viewBox="0 0 24 24"><path d="M3 17l6-9 4 6 3-4 5 7H3z"/></svg></div><h3 class="h4">Built to be arranged</h3><p>Start with a kit, add Blox as you go. Change the layout whenever you want a new challenge.</p></div>
+        <div class="card"><div class="icon-ring"><svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div><h3 class="h4">Made for your hobby</h3><p>Rock texture for crawlers. Concrete, coping and rails for fingerboards. Corners and camber for drift. Each brand speaks its hobby's language.</p></div>
+        <div class="card"><div class="icon-ring"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3 class="h4">Made to last</h3><p>Durable materials, precise molds and finishes that hold up to years of sessions at home, in-store or on the road.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark">
+    <div class="wrap split">
+      <div class="stack">
+        <span class="eyebrow">One growing ecosystem</span>
+        <h2 class="h2">Every brand makes the next one stronger.</h2>
+        <p class="lede muted">Each HobbyBlox brand shares the same product development, manufacturing, marketing, e-commerce and dealer network and the same community of builders, creators and venues. When one brand grows, the whole family benefits.</p>
+        <div class="facts"><span>Shared design &amp; tooling</span><span>Shared manufacturing</span><span>Shared dealer network</span><span>Shared community</span></div>
+      </div>
+      <div class="value-list">
+        <div class="row"><b>Play comes first</b><span>Every decision starts with the session how it feels to build, drive, ride and compete.</span></div>
+        <div class="row"><b>Industrial design over decoration</b><span>Form follows function. Realism comes from engineering, not stickers.</span></div>
+        <div class="row"><b>Cinematic, not corporate</b><span>We show worlds, not spec sheets.</span></div>
+        <div class="row"><b>Suggest, don't explain</b><span>A good landscape invites you in. So should a good page.</span></div>
+        <div class="row"><b>Refinement over reinvention</b><span>We improve what works and add what the community asks for.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="bg" style="background-image:url(img/hero-bg-4.jpg)"></div>
+    <div class="wrap">
+      <div class="stack"><h2 class="h2">Ready to build?</h2><p class="lede">MountainBlox is shipping now. Start with a Basecamp Kit and expand from there.</p></div>
+      <div class="cta-row"><a class="btn btn-primary" href="#/shop">Shop MountainBlox →</a><a class="btn btn-outline" href="#/venues">Become a dealer</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== OUR BRANDS ===================== -->
+<section class="page" data-route="/brands">
+  <section class="page-hero compact">
+    <div class="bg" style="background-image:url(img/hero-bg-1.jpg)"></div>
+    <div class="wrap">
+      <div class="slide-text">
+        <div class="crumbs"><a href="#/">Home</a><span>/</span><span>Our Brands</span></div>
+        <h1 class="h1">One family. Every hobby its own world.</h1>
+        <p class="lede">Every HobbyBlox brand is built around a single hobby and the terrain it needs. Here's what's shipping, what's in development, and what's on the drawing board.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-light">
+    <div class="wrap">
+      <div class="legend" style="margin-bottom:2rem"><span class="pill available">Available now</span><span>Shipping today</span><span class="pill dev">Under development</span><span>Tooling &amp; testing sign up for launch news</span><span class="pill future">Future brand</span><span>Concept stage</span><span class="pill concept">Concept imagery</span><span>Not a photo of a shipping product</span></div>
+
+      <div class="grid" style="gap:1.5rem">
+        <a class="brand-card" href="#/mountainblox" style="grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);grid-template-rows:none">
+          <div class="media" style="aspect-ratio:auto;min-height:280px"><img src="img/photo-starry-disco.jpg" alt="Crawler on MountainBlox terrain"></div>
+          <div class="body" style="padding:1.6rem"><span class="pill available">Available now</span><span class="name" style="font-size:1.6rem">MountainBlox</span><span class="sub" style="font-size:.95rem">Realistic, portable terrain for 1/24 and 1/18 scale RC crawlers. Snap-together Blox, tunnels, bridges and magnetic competition gates. Home of the MountainBlox League.</span><span class="facts"><span>Basecamp Kit from $399</span><span>Layout guides</span><span>League</span></span><span class="link ember">Explore MountainBlox →</span></div>
+        </a>
+        <div class="grid grid-2">
+          <a class="brand-card" href="#/fingerblox" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:none">
+            <div class="media" style="aspect-ratio:auto;min-height:220px"><img src="img/card-fbx.jpg" alt="FingerBlox Clover Bowl concept render"><span class="tag">Concept render</span></div>
+            <div class="body" style="padding:1.4rem"><span class="pill dev">Under development</span><span class="name" style="font-size:1.3rem">FingerBlox</span><span class="sub">Fingerboard pools with real skate culture SkateCrete™ terrain, GrindCore™ coping. Launching with a single pool.</span><span class="link">Get notified →</span></div>
+          </a>
+          <a class="brand-card" href="#/driftingblox" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:none">
+            <div class="media" style="aspect-ratio:auto;min-height:220px"><img src="img/card-dbx.jpg" alt="DriftingBlox concept course"><span class="tag">Concept imagery</span></div>
+            <div class="body" style="padding:1.4rem"><span class="pill dev">Under development</span><span class="name" style="font-size:1.3rem">DriftingBlox</span><span class="sub">Course terrain for small-scale RC drift corners, camber and scenery you can rearrange.</span><span class="link">Get notified →</span></div>
+          </a>
+        </div>
+        <div class="grid grid-2">
+          <div class="brand-card future" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:none">
+            <div class="media" style="aspect-ratio:auto;min-height:200px"><img src="img/card-rbx.jpg" alt="RailwayBlox concept scene"><span class="tag">Concept imagery</span></div>
+            <div class="body" style="padding:1.4rem"><span class="pill future">Future brand</span><span class="name" style="font-size:1.3rem">RailwayBlox</span><span class="sub">Model railroad environments mountains, cuts and trestles that grow with your layout.</span><button type="button" class="link" data-toast="You'll hear first when RailwayBlox has news">Get notified →</button></div>
+          </div>
+          <div class="brand-card future" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:none">
+            <div class="media" style="aspect-ratio:auto;min-height:200px"><img src="img/card-qbx.jpg" alt="QuarryBlox concept scene"><span class="tag">Concept imagery</span></div>
+            <div class="body" style="padding:1.4rem"><span class="pill future">Future brand</span><span class="name" style="font-size:1.3rem">QuarryBlox</span><span class="sub">RC construction terrain pits, benches and haul roads for scale excavators and dump trucks.</span><button type="button" class="link" data-toast="You'll hear first when QuarryBlox has news">Get notified →</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="signup">
+    <div class="wrap">
+      <div class="stack" style="gap:.35rem"><h3 class="h3">Want launch news for a specific brand?</h3><p class="small muted">Pick a brand and we'll only write when there's something real to show.</p></div>
+      <form class="field-row" data-toast="Thanks we'll keep you posted (prototype)"><label class="sr" for="brands-pick">Brand</label><select class="input" id="brands-pick"><option>FingerBlox</option><option>DriftingBlox</option><option>RailwayBlox</option><option>QuarryBlox</option><option>All future brands</option></select><label class="sr" for="brands-email">Email</label><input class="input" id="brands-email" type="email" placeholder="you@example.com" required><button class="btn btn-primary" type="submit">Notify me</button></form>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== MOUNTAINBLOX ===================== -->
+<section class="page" data-route="/mountainblox">
+  <section class="page-hero">
+    <div class="bg" style="background-image:url(img/photo-night-climb.jpg)"></div>
+    <div class="wrap">
+      <div class="slide-text">
+        <div class="crumbs"><a href="#/">Home</a><span>/</span><a href="#/brands">Our Brands</a><span>/</span><span>MountainBlox</span></div>
+        <span class="pill available">Available now</span>
+        <img class="brandmark" src="img/logo-mbx-dark.png" alt="MountainBlox" width="970" height="98">
+        <p class="tagline">Build. Customize. Conquer.</p>
+        <p class="lede">Realistic, portable terrain for 1/24 and 1/18 scale RC crawlers. Snap-together Blox, tunnels, bridges and magnetic gates a whole mountain that sets up in minutes and changes whenever you do.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="#/shop">Shop sets →</a><a class="btn btn-outline" href="#/league">Explore the League</a></div>
+      </div>
+      <div class="slide-visual"><img src="img/render-bridgecity.png" alt="Squatch Mountain Set Bridge City layout, Appalachian Ridge style" width="1500" height="886"></div>
+    </div>
+  </section>
+
+  <section class="section on-light">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Why crawlers love it</span><h2 class="h2">From box to mountain in minutes.</h2></div>
+      <div class="grid grid-4">
+        <div class="card"><span class="num">Realistic</span><h3 class="h4">Micro-rock texture</h3><p>Molded rock detail that grips like the real thing and reads real on camera.</p></div>
+        <div class="card"><span class="num">Rearrangeable</span><h3 class="h4">Snap together, no tools</h3><p>Connectors under each corner lock Blox in place. Rebuild the whole course in an evening.</p></div>
+        <div class="card"><span class="num">Expandable</span><h3 class="h4">Start small, go big</h3><p>Every set adds to the last. Tunnel Junctions stack for bigger climbs and more routes underneath.</p></div>
+        <div class="card"><span class="num">Competition ready</span><h3 class="h4">Magnetic gates</h3><p>Blox carry metallic powder, so gates and markers stick anywhere. Set a route, run the clock.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-white" id="mbx-shop">
+    <div class="wrap">
+      <div class="toolbar"><div class="sec-head" style="margin:0"><span class="eyebrow">Shop MountainBlox</span><h2 class="h2">Pick your starting point.</h2></div><a class="link ember" href="#/shop">All products →</a></div>
+      <div class="products">
+        <a class="product" href="#/product/basecamp-kit"><div class="media"><img src="img/layout-ridgeline-layout-1-rock-garden.jpg" alt="Basecamp Kit"></div><div class="body"><span class="brand">Kit · 6 Blox</span><span class="name">Basecamp Kit</span><span class="desc">Six Blox, a Split Bridge, gates and connectors. Builds up to a 30" × 36" course.</span><span class="price">$399.00</span><span class="btn btn-primary btn-sm">View kit</span></div></a>
+        <a class="product" href="#/product/basecamp-kit"><div class="media"><img src="img/layout-ridgeline-layout-2-rocky-gulch.jpg" alt="Ridgeline Set"></div><div class="body"><span class="brand">Set · 2 kits</span><span class="name">Ridgeline Set</span><span class="desc">Two kits' worth of Blox for longer lines, bigger elevation and three official layouts.</span><span class="price">$798.00</span><span class="btn btn-primary btn-sm">View set</span></div></a>
+        <a class="product" href="#/product/basecamp-kit"><div class="media"><img src="img/layout-summit-set-layout-2-boulder-basin.jpg" alt="Summit Set"></div><div class="body"><span class="brand">Set · 4 kits</span><span class="name">Summit Set</span><span class="desc">Four kits for a full table-top mountain with five official layouts to work through.</span><span class="price">$1,596.00</span><span class="btn btn-primary btn-sm">View set</span></div></a>
+        <a class="product" href="#/product/basecamp-kit"><div class="media"><img src="img/layout-sqm-layout-4-bridge-city.jpg" alt="Squatch Mountain Set"></div><div class="body"><span class="brand">Set · 6 kits + 4 Tunnel Junctions</span><span class="name">Squatch Mountain Set</span><span class="desc">The flagship. Everything for a store-scale installation or the ultimate home course.</span><span class="price">$2,643.00</span><span class="btn btn-primary btn-sm">View set</span></div></a>
+        <a class="product" href="#/product/basecamp-kit"><div class="media"><img src="img/photo-tunnel.jpg" alt="Tunnel Junction 2-Pack"></div><div class="body"><span class="brand">Accessory</span><span class="name">Tunnel Junction 2-Pack</span><span class="desc">Stack for taller climbs. Three entrances each for more routes beneath the terrain.</span><span class="price">$129.00</span><span class="btn btn-primary btn-sm">View</span></div></a>
+        <a class="product" href="#/product/basecamp-kit"><div class="media"><img src="img/photo-terrain-closeup.jpg" alt="Tunnel Junction 4-Pack"></div><div class="body"><span class="brand">Accessory</span><span class="name">Tunnel Junction 4-Pack</span><span class="desc">Four risers and tunnels for serious elevation.</span><span class="price">$249.00</span><span class="btn btn-primary btn-sm">View</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-light">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Meet the Blox</span><h2 class="h2">Six Blox. Endless mountains.</h2><p class="lede">Every Basecamp Kit includes one of each, plus a Split Bridge, five sets of magnetic gates, ten connectors and accessory hooks.</p></div>
+      <div class="grid grid-3">
+        <div class="card"><h3 class="h4">Squatch's Revenge</h3><p>The steep one. Ascents that test throttle control and tire grip.</p></div>
+        <div class="card"><h3 class="h4">Double Summit</h3><p>Dual peaks with a canyon between them the classic crest-and-descend line.</p></div>
+        <div class="card"><h3 class="h4">Tunnel Junction</h3><p>Stack it for height, drive through it for routes. Three entrances.</p></div>
+        <div class="card"><h3 class="h4">Mogul Mayhem</h3><p>Rolling bumps that put suspension articulation to work.</p></div>
+        <div class="card"><h3 class="h4">King of the Mountain</h3><p>Side slopes and turnarounds. Off-camber practice built in.</p></div>
+        <div class="card"><h3 class="h4">Split Faultline</h3><p>Runs as one Blox or splits into two sections for tighter layouts.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-white">
+    <div class="wrap split">
+      <div class="stack">
+        <span class="eyebrow">Official layouts</span>
+        <h2 class="h2">Thirteen layouts and counting.</h2>
+        <p class="lede">Every set ships with step-by-step layout guides Rock Garden, Switchback, The Gauntlet, Bridge City and more. Follow one exactly, or use it as a starting point and go your own way.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="#/instructions">Open the Instruction Center →</a></div>
+      </div>
+      <div class="grid grid-3" style="gap:.7rem">
+        <div class="layout-card"><img src="img/layout-ridgeline-layout-3-switchback.jpg" alt=""><div class="body"><span class="set">Ridgeline</span><span class="name" style="font-size:.85rem">Switchback</span></div></div>
+        <div class="layout-card"><img src="img/layout-summit-set-layout-3-the-gauntlet.jpg" alt=""><div class="body"><span class="set">Summit</span><span class="name" style="font-size:.85rem">The Gauntlet</span></div></div>
+        <div class="layout-card"><img src="img/layout-sqm-layout-5-bridge-peak.jpg" alt=""><div class="body"><span class="set">Squatch Mtn</span><span class="name" style="font-size:.85rem">Bridge Peak</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="bg" style="background-image:url(img/hero-bg-3.jpg)"></div>
+    <div class="wrap">
+      <div class="stack"><img class="brandmark league" src="img/logo-league.png" alt="MountainBlox League" style="width:min(320px,100%)"><p class="lede">Your terrain becomes the arena. Set the official gates, run the clock, and post your time against drivers everywhere.</p></div>
+      <div class="cta-row"><a class="btn btn-primary" href="#/league">Explore the League →</a></div>
+    </div>
+  </section>
+
+  <section class="section on-light">
+    <div class="wrap split">
+      <div class="photo-frame frame"><img src="img/squatch.jpg" alt="Squatch, the MountainBlox spirit guide, standing on a ridge at sunrise" style="aspect-ratio:1"></div>
+      <div class="stack copy">
+        <span class="eyebrow">Meet our spirit guide</span>
+        <h2 class="h2">Squatch.</h2>
+        <p>Freedom, strength and wild places. Squatch stands for the reason we crawl: getting out there, finding a line nobody else saw, and bringing friends along. Watch for him on packaging, layouts and at League events.</p>
+        <div class="acc" style="margin-top:.5rem">
+          <details><summary>What scale is MountainBlox for?</summary><div class="a">Designed for 1/24 and 1/18 scale crawlers; 1/32 and 1/30 scale fit as well. 1/10 scale isn't supported yet larger products are being considered.</div></details>
+          <details><summary>Do I need tools or glue?</summary><div class="a">No. Blox snap together with connectors under each corner. Bridges hook on with L-hooks. Setup takes minutes, teardown is just as quick.</div></details>
+          <details><summary>How do the magnets work?</summary><div class="a">Blox are molded with metallic powder, so magnetic gates, markers and accessories stick wherever you place them no drilling.</div></details>
+          <details><summary>Shipping &amp; returns</summary><div class="a">Orders ship from the USA in 1–3 business days and typically arrive in 3–7. Unused items in original packaging can be returned within 30 days for a full refund. International shipping is coming.</div></details>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== FINGERBLOX ===================== -->
+<section class="page" data-route="/fingerblox">
+  <section class="page-hero">
+    <div class="bg" style="background-image:url(img/fbx-pool-golden.jpg)"></div>
+    <div class="wrap">
+      <div class="slide-text">
+        <div class="crumbs"><a href="#/">Home</a><span>/</span><a href="#/brands">Our Brands</a><span>/</span><span>FingerBlox</span></div>
+        <span class="pill dev">Under development</span>
+        <img class="brandmark" src="img/logo-fbx-ivory.png" alt="FingerBlox" width="1400" height="467" style="width:min(380px,100%)">
+        <p class="tagline">Big culture. Small scale.</p>
+        <p class="lede">Modular fingerboard terrain inspired by real skate culture. Concrete-look SkateCrete™ surfaces, grindable GrindCore™ coping and MagCore™ zones for accessories starting with a single pool.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="#fbx-notify">Get launch updates →</a></div>
+      </div>
+      <div class="slide-visual"><div class="framed"><img src="img/card-fbx.jpg" alt="FingerBlox pool concept render" width="835" height="404"></div></div>
+    </div>
+  </section>
+
+  <section class="section on-light">
+    <div class="wrap split">
+      <div class="stack copy">
+        <span class="eyebrow">Launching with one pool</span>
+        <h2 class="h2">First up: the pool.</h2>
+        <p>FingerBlox launches with a single pool a real-material, three-quarter-view bowl with readable coping, tile line and steel rails. The full park comes later. The pool comes first, because that's where the session starts.</p>
+        <p class="note">Image above is a concept render. Final product photography will replace it before launch.</p>
+        <div class="timeline">
+          <div class="tl done"><b>Concept</b><span>Brand and bowl lineup locked</span></div>
+          <div class="tl done"><b>Design</b><span>Pool geometry and materials</span></div>
+          <div class="tl now"><b>Tooling</b><span>Molds and test pours</span></div>
+          <div class="tl"><b>Launch</b><span>Sign up to be first</span></div>
+        </div>
+      </div>
+      <div class="grid grid-2" style="gap:.7rem">
+        <div class="photo-frame"><img src="img/fbx-pool-night.jpg" alt="Backyard pool at dusk brand mood"></div>
+        <div class="photo-frame"><img src="img/fbx-street.jpg" alt="Street ledge at golden hour brand mood"></div>
+        <div class="photo-frame"><img src="img/fbx-brick.jpg" alt="Brick and block wall texture"></div>
+        <div class="photo-frame"><img src="img/fbx-graffiti.jpg" alt="Graffiti wall mood"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-white">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Built different</span><h2 class="h2">Real materials at fingerboard scale.</h2></div>
+      <div class="grid grid-3">
+        <div class="card"><span class="num">Terrain</span><h3 class="h4">SkateCrete™</h3><p>Thick-walled rigid polyurethane with molded concrete texture. Looks and sounds like the real spot.</p></div>
+        <div class="card"><span class="num">Rails &amp; coping</span><h3 class="h4">GrindCore™</h3><p>The grindable material system for coping, rails and edges built for tactile feel and durability.</p></div>
+        <div class="card"><span class="num">Magnetic compatibility</span><h3 class="h4">MagCore™ Zones</h3><p>Selected zones with iron-infused material for magnetic accessories and features.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="signup" id="fbx-notify">
+    <div class="wrap">
+      <div class="stack" style="gap:.35rem"><h3 class="h3">Be first in the pool</h3><p class="small muted">One email when pre-orders open. That's it.</p></div>
+      <form class="field-row" data-toast="You're on the FingerBlox list (prototype)"><label class="sr" for="fbx-email">Email</label><input class="input" id="fbx-email" type="email" placeholder="you@example.com" required><button class="btn btn-primary" type="submit">Notify me</button></form>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== DRIFTINGBLOX ===================== -->
+<section class="page" data-route="/driftingblox">
+  <section class="page-hero">
+    <div class="bg" style="background-image:url(img/hero-bg-2.jpg)"></div>
+    <div class="wrap">
+      <div class="slide-text">
+        <div class="crumbs"><a href="#/">Home</a><span>/</span><a href="#/brands">Our Brands</a><span>/</span><span>DriftingBlox</span></div>
+        <span class="pill dev">Under development</span>
+        <h1 class="h1">DriftingBlox</h1>
+        <p class="tagline">Corners you can rearrange.</p>
+        <p class="lede">Course terrain for small-scale RC drift hairpins, sweepers, camber and scenery that come together into a circuit you can rebuild for every session.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="#dbx-notify">Get launch updates →</a></div>
+      </div>
+      <div class="slide-visual"><div class="framed"><img src="img/card-dbx.jpg" alt="DriftingBlox concept course" width="780" height="582"></div></div>
+    </div>
+  </section>
+
+  <section class="section on-light">
+    <div class="wrap split">
+      <div class="stack copy">
+        <span class="eyebrow">What we're building</span>
+        <h2 class="h2">The track is the terrain.</h2>
+        <p>Drift courses today are tape on a floor. DriftingBlox gives the line real edges curbing, elevation changes and roadside scenery in pieces that connect and reconnect so the circuit never gets old.</p>
+        <p class="note">Imagery on this page is concept art, not a photo of a shipping product. Course renders and scale details will be published as development continues.</p>
+        <div class="timeline">
+          <div class="tl done"><b>Concept</b><span>Brand direction set</span></div>
+          <div class="tl now"><b>Design</b><span>Course pieces and surface</span></div>
+          <div class="tl"><b>Tooling</b><span>Molds and testing</span></div>
+          <div class="tl"><b>Launch</b><span>Sign up to be first</span></div>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <div class="card"><h3 class="h4">Corners &amp; camber</h3><p>Hairpins, sweepers and banked sections you can order any way you like.</p></div>
+        <div class="card"><h3 class="h4">Scenery included</h3><p>Guardrails, trees and rock faces that make the run look like a mountain pass.</p></div>
+        <div class="card"><h3 class="h4">Rearrangeable</h3><p>Reconnect the pieces and the circuit is new again.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="signup" id="dbx-notify">
+    <div class="wrap">
+      <div class="stack" style="gap:.35rem"><h3 class="h3">Follow DriftingBlox</h3><p class="small muted">Course reveals, scale details and pre-order dates.</p></div>
+      <form class="field-row" data-toast="You're on the DriftingBlox list (prototype)"><label class="sr" for="dbx-email">Email</label><input class="input" id="dbx-email" type="email" placeholder="you@example.com" required><button class="btn btn-primary" type="submit">Notify me</button></form>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== MOUNTAINBLOX LEAGUE ===================== -->
+<section class="page" data-route="/league">
+  <section class="page-hero">
+    <div class="bg" style="background-image:url(img/hero-bg-3.jpg)"></div>
+    <div class="wrap">
+      <div class="slide-text">
+        <div class="crumbs"><a href="#/">Home</a><span>/</span><a href="#/mountainblox">MountainBlox</a><span>/</span><span>League</span></div>
+        <img class="brandmark league" src="img/logo-league.png" alt="MountainBlox League" width="1172" height="303">
+        <p class="tagline">Your terrain. Your challenge. Your league.</p>
+        <p class="lede">Turn any MountainBlox layout into a competition arena. Build an official layout, set the gates, run the clock, and see how you stack up against drivers across the country and around the world.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="#league-join">Join the League →</a><a class="btn btn-outline" href="#/venues">Host League nights</a></div>
+      </div>
+      <div class="slide-visual"><img src="img/render-gates.png" alt="Official route: Gate 1 to Gate 5 and the Finish Gate marked across a Squatch Mountain layout" width="1700" height="849"></div>
+    </div>
+  </section>
+
+  <section class="section on-light">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">How it works</span><h2 class="h2">Build. Gate. Run. Rank.</h2></div>
+      <div class="steps">
+        <div class="step"><b>Build an official layout</b><span>Every season uses layouts from the Instruction Center, so every driver runs the same terrain.</span></div>
+        <div class="step"><b>Set the gates</b><span>Place the magnetic gates on the route card Gate #1 through Gate #5, then the Finish Gate.</span></div>
+        <div class="step"><b>Run the clock</b><span>Film your run, gates in frame. Clean gates count; missed gates add time.</span></div>
+        <div class="step"><b>Submit &amp; rank</b><span>Upload your best time. Leaderboards by layout, by region and worldwide.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-white">
+    <div class="wrap split">
+      <div class="stack copy">
+        <span class="eyebrow">Where you compete</span>
+        <h2 class="h2">At home. In-store. At events.</h2>
+        <p>Run solo on your own layout, meet up at a League venue, or line up at a live event. Same terrain, same gates, one leaderboard.</p>
+        <div class="value-list">
+          <div class="row"><b>Home runs</b><span>Any Basecamp Kit or larger. Submit from your phone.</span></div>
+          <div class="row"><b>League venues</b><span>Hobby stores and FECs with a permanent MountainBlox course host weekly heats.</span></div>
+          <div class="row"><b>Live events</b><span>Trade shows and crawl meets with a timed course and finals on the day.</span></div>
+        </div>
+      </div>
+      <div class="photo-frame frame"><img src="img/store-photo.jpg" alt="Drivers competing on a MountainBlox course in a hobby store"><span class="cap">League night · hobby store</span></div>
+    </div>
+  </section>
+
+  <section class="signup" id="league-join">
+    <div class="wrap">
+      <div class="stack" style="gap:.35rem"><h3 class="h3">Season 1 registration</h3><p class="small muted">Dates, divisions and the first official layouts announced to the list first.</p></div>
+      <form class="field-row" data-toast="You're on the League list (prototype)"><label class="sr" for="league-email">Email</label><input class="input" id="league-email" type="email" placeholder="you@example.com" required><button class="btn btn-primary" type="submit">Join the League</button></form>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== SHOP ===================== -->
+<section class="page" data-route="/shop">
+  <section class="page-hero compact">
+    <div class="bg" style="background-image:url(img/photo-terrain-closeup.jpg)"></div>
+    <div class="wrap">
+      <div class="slide-text">
+        <div class="crumbs"><a href="#/">Home</a><span>/</span><span>Shop</span></div>
+        <h1 class="h1">Shop Blox</h1>
+        <p class="lede">MountainBlox sets and accessories ship today. FingerBlox and DriftingBlox are listed so you can follow them they'll go live here the day they launch.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-light">
+    <div class="wrap shop-layout">
+      <aside class="filters" aria-label="Filters">
+        <div><h4>Brand</h4><label><input type="checkbox" checked> MountainBlox <span class="muted">(6)</span></label><label><input type="checkbox" checked> FingerBlox <span class="muted">(1)</span></label><label><input type="checkbox" checked> DriftingBlox <span class="muted">(1)</span></label></div>
+        <div><h4>Type</h4><label><input type="checkbox" checked> Kits &amp; sets</label><label><input type="checkbox" checked> Accessories</label><label><input type="checkbox" checked> Coming soon</label></div>
+        <div><h4>Scale</h4><label><input type="checkbox" checked> 1/24 – 1/18 crawlers</label><label><input type="checkbox"> Fingerboard</label><label><input type="checkbox"> Small-scale drift</label></div>
+      </aside>
+      <div>
+        <div class="toolbar">
+          <div class="chips" id="shop-chips"><button class="chip" aria-pressed="true" data-filter="all">All</button><button class="chip" aria-pressed="false" data-filter="set">Kits &amp; sets</button><button class="chip" aria-pressed="false" data-filter="acc">Accessories</button><button class="chip" aria-pressed="false" data-filter="soon">Coming soon</button></div>
+          <label class="mono muted" style="display:flex;gap:.6rem;align-items:center">Sort <select class="input" style="min-width:0;padding:.5rem .7rem;font-size:.8rem"><option>Featured</option><option>Price: low to high</option><option>Price: high to low</option><option>Newest</option></select></label>
+        </div>
+        <div class="products" id="shop-grid">
+          <a class="product" href="#/product/basecamp-kit" data-type="set"><div class="media"><img src="img/layout-ridgeline-layout-1-rock-garden.jpg" alt=""><span class="pill available">Available</span></div><div class="body"><span class="brand">MountainBlox · Kit</span><span class="name">Basecamp Kit</span><span class="desc">6 Blox, Split Bridge, 5 gate sets, connectors. Up to 30" × 36".</span><span class="price">$399.00</span><span class="btn btn-primary btn-sm">Add to cart</span></div></a>
+          <a class="product" href="#/product/basecamp-kit" data-type="set"><div class="media"><img src="img/layout-ridgeline-layout-2-rocky-gulch.jpg" alt=""><span class="pill available">Available</span></div><div class="body"><span class="brand">MountainBlox · Set</span><span class="name">Ridgeline Set</span><span class="desc">2 kits. Three official layouts included.</span><span class="price">$798.00</span><span class="btn btn-primary btn-sm">Add to cart</span></div></a>
+          <a class="product" href="#/product/basecamp-kit" data-type="set"><div class="media"><img src="img/layout-summit-set-layout-2-boulder-basin.jpg" alt=""><span class="pill available">Available</span></div><div class="body"><span class="brand">MountainBlox · Set</span><span class="name">Summit Set</span><span class="desc">4 kits. Five official layouts included.</span><span class="price">$1,596.00</span><span class="btn btn-primary btn-sm">Add to cart</span></div></a>
+          <a class="product" href="#/product/basecamp-kit" data-type="set"><div class="media"><img src="img/layout-sqm-layout-4-bridge-city.jpg" alt=""><span class="pill available">Available</span></div><div class="body"><span class="brand">MountainBlox · Set</span><span class="name">Squatch Mountain Set</span><span class="desc">6 kits + 4 extra Tunnel Junctions. Five official layouts.</span><span class="price">$2,643.00</span><span class="btn btn-primary btn-sm">Add to cart</span></div></a>
+          <a class="product" href="#/product/basecamp-kit" data-type="acc"><div class="media"><img src="img/photo-tunnel.jpg" alt=""><span class="pill available">Available</span></div><div class="body"><span class="brand">MountainBlox · Accessory</span><span class="name">Tunnel Junction 2-Pack</span><span class="desc">Risers and tunnels. Three entrances each.</span><span class="price">$129.00</span><span class="btn btn-primary btn-sm">Add to cart</span></div></a>
+          <a class="product" href="#/product/basecamp-kit" data-type="acc"><div class="media"><img src="img/photo-terrain-closeup.jpg" alt=""><span class="pill available">Available</span></div><div class="body"><span class="brand">MountainBlox · Accessory</span><span class="name">Tunnel Junction 4-Pack</span><span class="desc">Four risers for serious elevation.</span><span class="price">$249.00</span><span class="btn btn-primary btn-sm">Add to cart</span></div></a>
+          <a class="product soon" href="#/fingerblox" data-type="soon"><div class="media"><img src="img/card-fbx.jpg" alt=""><span class="pill dev">Under development</span></div><div class="body"><span class="brand">FingerBlox · Pool</span><span class="name">FingerBlox Pool</span><span class="desc">Concept render. Launching with a single pool.</span><span class="price soon">Price to be announced</span><span class="btn btn-outline btn-sm">Notify me</span></div></a>
+          <a class="product soon" href="#/driftingblox" data-type="soon"><div class="media"><img src="img/card-dbx.jpg" alt=""><span class="pill dev">Under development</span></div><div class="body"><span class="brand">DriftingBlox · Course</span><span class="name">DriftingBlox Starter Course</span><span class="desc">Concept imagery. Details to follow.</span><span class="price soon">Price to be announced</span><span class="btn btn-outline btn-sm">Notify me</span></div></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== PRODUCT (Basecamp Kit) ===================== -->
+<section class="page on-light" data-route="/product/basecamp-kit">
+  <section class="section-tight on-light">
+    <div class="wrap">
+      <div class="crumbs" style="color:var(--muted-light);margin-bottom:1.5rem"><a href="#/">Home</a><span>/</span><a href="#/shop">Shop</a><span>/</span><a href="#/mountainblox">MountainBlox</a><span>/</span><span>Basecamp Kit</span></div>
+      <div class="pdp">
+        <div class="pdp-gallery">
+          <div class="main"><img id="pdp-main" src="img/layout-ridgeline-layout-1-rock-garden.jpg" alt="Basecamp Kit built as the Rock Garden layout"></div>
+          <div class="thumbs" id="pdp-thumbs">
+            <button type="button" aria-current="true" data-src="img/layout-ridgeline-layout-1-rock-garden.jpg"><img src="img/layout-ridgeline-layout-1-rock-garden.jpg" alt="Rock Garden layout"></button>
+            <button type="button" data-src="img/photo-starry-disco.jpg"><img src="img/photo-starry-disco.jpg" alt="Crawler on terrain"></button>
+            <button type="button" data-src="img/photo-rocks-tree.jpg"><img src="img/photo-rocks-tree.jpg" alt="Rock detail"></button>
+            <button type="button" data-src="img/photo-tunnel.jpg"><img src="img/photo-tunnel.jpg" alt="Tunnel Junction"></button>
+            <button type="button" data-src="img/photo-wheel-detail.jpg"><img src="img/photo-wheel-detail.jpg" alt="Micro-rock texture close-up"></button>
+          </div>
+        </div>
+        <div class="buy">
+          <span class="pill available">Available now · Made in USA</span>
+          <div class="stack" style="gap:.5rem"><span class="brand mono muted">MountainBlox · Kit</span><h1 class="h2">Basecamp Kit</h1><span class="stars" aria-label="Rating placeholder">★★★★★ <span class="small muted" style="letter-spacing:0;color:var(--muted-light)">Reviews sync from your review app</span></span></div>
+          <div class="price-big">$399.00 <span class="small muted" style="font-family:var(--body);letter-spacing:0">USD</span></div>
+          <p class="copy" style="color:var(--muted-light)">Compact, portable and realistic. Practice mountain maneuvers and sharpen your skills indoors: build, crawl and reconfigure in minutes. Six Blox, a Split Bridge and five sets of magnetic gates enough for a 30" × 36" course, and the foundation every larger set builds on.</p>
+          <div class="buy-row"><div class="qty"><button type="button" aria-label="Decrease quantity">−</button><input id="qty" type="text" value="1" inputmode="numeric" aria-label="Quantity"><button type="button" aria-label="Increase quantity">+</button></div><button type="button" class="btn btn-primary" data-toast="Added Basecamp Kit to your cart (prototype)">Add to cart</button></div>
+          <button type="button" class="btn btn-outline" style="justify-content:center" data-toast="Shop Pay express checkout (prototype)">Buy with Shop Pay</button>
+          <div class="ship-note"><b>Ships from the USA in 1–3 business days.</b><span>Typically arrives in 3–7 business days. 30-day returns on unused items in original packaging.</span></div>
+          <div class="facts"><span>1/24 &amp; 1/18 scale</span><span>Tool-free</span><span>Magnet-compatible</span><span>Patent pending</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-white">
+    <div class="wrap split" style="align-items:start">
+      <div class="stack">
+        <span class="eyebrow">What's in the box</span>
+        <h2 class="h3">One of every Blox</h2>
+        <ul class="includes">
+          <li>1 × Squatch's Revenge Blox steep ascents</li>
+          <li>1 × Double Summit Blox dual peaks and canyon</li>
+          <li>1 × Tunnel Junction Blox stackable riser and tunnel</li>
+          <li>1 × Mogul Mayhem Blox suspension testing</li>
+          <li>1 × King of the Mountain Blox side slopes and turnarounds</li>
+          <li>1 × Split Faultline Blox runs as one or two sections</li>
+          <li>1 × Split Bridge</li>
+          <li>4 × Orange competition gate sets (magnetic)</li>
+          <li>1 × Green competition gate set</li>
+          <li>10 × Blox connectors</li>
+          <li>2 × Accessory hook sets</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <span class="eyebrow">Specs</span>
+        <div class="spec">
+          <div>Scale</div><div>1/24 &amp; 1/18 crawlers (also fits 1/32, 1/30)</div>
+          <div>Course size</div><div>Up to 30" × 36" with one kit</div>
+          <div>Assembly</div><div>Tool-free, snap-together connectors</div>
+          <div>Surface</div><div>Ultra-realistic micro-rock texture, painted</div>
+          <div>Magnetic</div><div>Metallic-powder molding for gates &amp; markers</div>
+          <div>Expandable</div><div>Combines with every MountainBlox set</div>
+          <div>Origin</div><div>Made in the USA · Patent pending</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-light">
+    <div class="wrap">
+      <div class="toolbar"><div class="sec-head" style="margin:0"><span class="eyebrow">Complete the mountain</span><h2 class="h2">Goes well with</h2></div><a class="link ember" href="#/shop">All products →</a></div>
+      <div class="products">
+        <a class="product" href="#/product/basecamp-kit"><div class="media"><img src="img/photo-tunnel.jpg" alt=""></div><div class="body"><span class="brand">Accessory</span><span class="name">Tunnel Junction 2-Pack</span><span class="desc">Add height and routes beneath the terrain.</span><span class="price">$129.00</span></div></a>
+        <a class="product" href="#/product/basecamp-kit"><div class="media"><img src="img/layout-ridgeline-layout-2-rocky-gulch.jpg" alt=""></div><div class="body"><span class="brand">Set</span><span class="name">Ridgeline Set</span><span class="desc">Two kits, three layouts the next step up.</span><span class="price">$798.00</span></div></a>
+        <a class="product" href="#/instructions"><div class="media"><img src="img/layout-ridgeline-layout-3-switchback.jpg" alt=""></div><div class="body"><span class="brand">Free</span><span class="name">Layout guides</span><span class="desc">Step-by-step PDFs for every set.</span><span class="price">$0.00</span></div></a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== INSTRUCTION CENTER ===================== -->
+<section class="page" data-route="/instructions">
+  <section class="page-hero compact">
+    <div class="bg" style="background-image:url(img/photo-rocks-tree.jpg)"></div>
+    <div class="wrap">
+      <div class="slide-text">
+        <div class="crumbs"><a href="#/">Home</a><span>/</span><span>Instruction Center</span></div>
+        <h1 class="h1">Instruction Center</h1>
+        <p class="lede">Setup videos, official layout guides and build inspiration for every MountainBlox set. FingerBlox and DriftingBlox guides will live here too.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-light">
+    <div class="wrap">
+      <div class="tabs" role="tablist" id="ic-tabs">
+        <button role="tab" aria-selected="true" data-tab="start">Getting started</button>
+        <button role="tab" aria-selected="false" data-tab="layouts">Layout guides</button>
+        <button role="tab" aria-selected="false" data-tab="tips">Build tips</button>
+        <button role="tab" aria-selected="false" data-tab="inspo">Inspiration</button>
+      </div>
+
+      <div class="tabpanel" data-panel="start">
+        <div class="split">
+          <div class="video"><img src="img/photo-terrain-closeup.jpg" alt=""><button type="button" class="play" aria-label="Play setup video" data-toast="Embedded YouTube video plays here"><svg viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></svg></button><span class="vcap">Unboxing &amp; first build · 4:32</span></div>
+          <div class="stack copy">
+            <span class="eyebrow">Start here</span>
+            <h2 class="h2">From box to mountain in minutes.</h2>
+            <p>Lay out your Blox row by row, add a connector under each corner before stacking or starting the next row, then hook on bridges and place your gates. No tools, no glue.</p>
+            <div class="value-list">
+              <div class="row"><b>1 · Lay the base</b><span>Start on a flat floor or table and place the first row of Blox.</span></div>
+              <div class="row"><b>2 · Connect</b><span>Slide a connector under every corner before adding the next row.</span></div>
+              <div class="row"><b>3 · Stack &amp; bridge</b><span>Tunnel Junctions raise the course. Hook bridges on with L-hooks.</span></div>
+              <div class="row"><b>4 · Set gates</b><span>Magnetic gates stick anywhere. Pick a route and run it.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabpanel" data-panel="layouts" hidden>
+        <div class="sec-head"><span class="eyebrow">Official layouts</span><h2 class="h2">Thirteen guides. Download and build.</h2><p class="lede">Each PDF shows the finished layout, the Blox list and a step-by-step build. Basecamp Kit layouts are next.</p></div>
+        <h3 class="h4" style="margin-bottom:1rem">Ridgeline Set · 2 kits</h3>
+        <div class="layouts" style="margin-bottom:2.5rem">
+          <div class="layout-card"><img src="img/layout-ridgeline-layout-1-rock-garden.jpg" alt=""><div class="body"><span class="set">Ridgeline · Layout 1</span><span class="name">Rock Garden</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for RidgeLine Set Layout 1 Rock Garden.pdf">Download PDF</a></div></div></div>
+          <div class="layout-card"><img src="img/layout-ridgeline-layout-2-rocky-gulch.jpg" alt=""><div class="body"><span class="set">Ridgeline · Layout 2</span><span class="name">Rocky Gulch</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for RidgeLine Set Layout 2 Rocky Gulch.pdf">Download PDF</a></div></div></div>
+          <div class="layout-card"><img src="img/layout-ridgeline-layout-3-switchback.jpg" alt=""><div class="body"><span class="set">Ridgeline · Layout 3</span><span class="name">Switchback</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for RidgeLine Set Layout 3 Switchback.pdf">Download PDF</a></div></div></div>
+        </div>
+        <h3 class="h4" style="margin-bottom:1rem">Summit Set · 4 kits</h3>
+        <div class="layouts" style="margin-bottom:2.5rem">
+          <div class="layout-card"><img src="img/layout-summit-set-layout-1-stonefall.jpg" alt=""><div class="body"><span class="set">Summit · Layout 1</span><span class="name">Stonefall</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for Summit Set Layout 1 Stonefall.pdf">Download PDF</a></div></div></div>
+          <div class="layout-card"><img src="img/layout-summit-set-layout-2-boulder-basin.jpg" alt=""><div class="body"><span class="set">Summit · Layout 2</span><span class="name">Boulder Basin</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for Summit Set Layout 2 Boulder Basin.pdf">Download PDF</a></div></div></div>
+          <div class="layout-card"><img src="img/layout-summit-set-layout-3-the-gauntlet.jpg" alt=""><div class="body"><span class="set">Summit · Layout 3</span><span class="name">The Gauntlet</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for Summit Set Layout 3 The Gauntlet.pdf">Download PDF</a></div></div></div>
+          <div class="layout-card"><img src="img/layout-summit-set-layout-4-the-narrows.jpg" alt=""><div class="body"><span class="set">Summit · Layout 4</span><span class="name">The Narrows</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for Summit Set Layout 4 The Narrows.pdf">Download PDF</a></div></div></div>
+          <div class="layout-card"><img src="img/layout-summit-set-layout-5-peak-pursuit.jpg" alt=""><div class="body"><span class="set">Summit · Layout 5</span><span class="name">Peak Pursuit</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for Summit Set Layout 5 Peak Pursuit.pdf">Download PDF</a></div></div></div>
+        </div>
+        <h3 class="h4" style="margin-bottom:1rem">Squatch Mountain Set · 6 kits + 4 Tunnel Junctions</h3>
+        <div class="layouts">
+          <div class="layout-card"><img src="img/layout-sqm-layout-1-highland-scramble.jpg" alt=""><div class="body"><span class="set">Squatch Mountain · Layout 1</span><span class="name">Highland Scramble</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for Squatch Mountain Set Layout 1 Highland Scramble.pdf">Download PDF</a></div></div></div>
+          <div class="layout-card"><img src="img/layout-sqm-layout-2-crawlers-playground.jpg" alt=""><div class="body"><span class="set">Squatch Mountain · Layout 2</span><span class="name">Crawlers Playground</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for Squatch Mountain Set Layout 2 Crawlers Playground.pdf">Download PDF</a></div></div></div>
+          <div class="layout-card"><img src="img/layout-sqm-layout-3-jagged-peak.jpg" alt=""><div class="body"><span class="set">Squatch Mountain · Layout 3</span><span class="name">Jagged Peak</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for Squatch Mountain Set Layout 3 Jagged Peak.pdf">Download PDF</a></div></div></div>
+          <div class="layout-card"><img src="img/layout-sqm-layout-4-bridge-city.jpg" alt=""><div class="body"><span class="set">Squatch Mountain · Layout 4</span><span class="name">Bridge City</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for Squatch Mountain Set Layout 4 Bridge City.pdf">Download PDF</a></div></div></div>
+          <div class="layout-card"><img src="img/layout-sqm-layout-5-bridge-peak.jpg" alt=""><div class="body"><span class="set">Squatch Mountain · Layout 5</span><span class="name">Bridge Peak</span><div class="row"><a class="link ember" href="#" data-toast="Downloads: Instructions for Squatch Mountain Set Layout 5 Bridge Peak.pdf">Download PDF</a></div></div></div>
+        </div>
+      </div>
+
+      <div class="tabpanel" data-panel="tips" hidden>
+        <div class="sec-head"><span class="eyebrow">Build tips</span><h2 class="h2">Get more out of every Blox.</h2></div>
+        <div class="grid grid-3">
+          <div class="card"><h3 class="h4">Stack for elevation</h3><p>Put Tunnel Junctions under existing Blox or under each other. Every stack adds a climb on top and a route underneath.</p></div>
+          <div class="card"><h3 class="h4">Split the Faultline</h3><p>Run the Split Faultline as one piece for a long crossing, or split it to squeeze a tight line into a corner of the room.</p></div>
+          <div class="card"><h3 class="h4">Rotate the difficulty</h3><p>Change gate positions before changing Blox. A new route on the same layout is a new course.</p></div>
+          <div class="card"><h3 class="h4">Bridge with intent</h3><p>Hook the Split Bridge between two summits for a high crossing or drop one end for a steep descent.</p></div>
+          <div class="card"><h3 class="h4">Flat floor first</h3><p>Blox lock best on a flat table or floor. Rugs and mats make connectors sit unevenly.</p></div>
+          <div class="card"><h3 class="h4">Photograph low</h3><p>Camera at Blox level, backdrop behind the micro-texture does the rest.</p></div>
+        </div>
+      </div>
+
+      <div class="tabpanel" data-panel="inspo" hidden>
+        <div class="sec-head"><span class="eyebrow">Inspiration</span><h2 class="h2">Layouts the community built.</h2><p class="lede">Painted sets, backdrops, custom scenery. Tag #MountainBloxChallenge to be featured.</p></div>
+        <div class="masonry">
+          <figure><img src="img/photo-starry-disco.jpg" alt=""><figcaption><span>Night-sky backdrop build</span><small>Community</small></figcaption></figure>
+          <figure><img src="img/photo-rear-climb.jpg" alt=""><figcaption><span>Painted Blox, moss detail</span><small>Community</small></figcaption></figure>
+          <figure><img src="img/photo-ridge-sunset.jpg" alt=""><figcaption><span>Sunset ridge run</span><small>Featured</small></figcaption></figure>
+          <figure><img src="img/photo-side-rocks.jpg" alt=""><figcaption><span>Rock-garden line</span><small>Community</small></figcaption></figure>
+          <figure><img src="img/photo-squatch-climb.jpg" alt=""><figcaption><span>Squatch's Revenge, sand finish</span><small>Featured</small></figcaption></figure>
+          <figure><img src="img/photo-tunnel.jpg" alt=""><figcaption><span>Through the Tunnel Junction</span><small>Community</small></figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section class="page" data-route="/gallery">
+  <section class="page-hero compact">
+    <div class="bg" style="background-image:url(img/photo-ridge-sunset.jpg)"></div>
+    <div class="wrap">
+      <div class="slide-text">
+        <div class="crumbs"><a href="#/">Home</a><span>/</span><span>Gallery</span></div>
+        <h1 class="h1">Worlds people built</h1>
+        <p class="lede">Customer builds, community photos, videos and featured layouts. Share yours with #MountainBloxChallenge.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section on-dark">
+    <div class="wrap">
+      <div class="toolbar"><div class="chips" id="gal-chips"><button class="chip" aria-pressed="true" data-filter="all">All</button><button class="chip" aria-pressed="false" data-filter="customer">Customer builds</button><button class="chip" aria-pressed="false" data-filter="community">Community</button><button class="chip" aria-pressed="false" data-filter="video">Videos</button><button class="chip" aria-pressed="false" data-filter="featured">Featured</button></div><a class="btn btn-outline btn-sm" href="#" data-toast="Opens the build submission form">Submit your build</a></div>
+      <div class="masonry" id="gal-grid">
+        <figure data-type="featured"><img src="img/photo-starry-disco.jpg" alt=""><figcaption><span>Disco under the Milky Way</span><small>Featured build</small></figcaption></figure>
+        <figure data-type="customer"><img src="img/photo-rear-climb.jpg" alt=""><figcaption><span>Painted Squatch Mountain Set</span><small>Customer build</small></figcaption></figure>
+        <figure data-type="video"><img src="img/photo-sunset-climb.jpg" alt=""><figcaption><span>▶ Sunset crest, full run</span><small>Video</small></figcaption></figure>
+        <figure data-type="community"><img src="img/photo-side-rocks.jpg" alt=""><figcaption><span>Moss and pine detail</span><small>Community</small></figcaption></figure>
+        <figure data-type="customer"><img src="img/photo-squatch-climb.jpg" alt=""><figcaption><span>Squatch's Revenge, unpainted</span><small>Customer build</small></figcaption></figure>
+        <figure data-type="featured"><img src="img/store-photo.jpg" alt=""><figcaption><span>Hobby store League night</span><small>Featured venue</small></figcaption></figure>
+        <figure data-type="community"><img src="img/photo-tunnel.jpg" alt=""><figcaption><span>Tunnel Junction crawl-through</span><small>Community</small></figcaption></figure>
+        <figure data-type="video"><img src="img/photo-terrain-closeup.jpg" alt=""><figcaption><span>▶ Squatch Mountain Set build time-lapse</span><small>Video</small></figcaption></figure>
+        <figure data-type="customer"><img src="img/photo-rocks-tree.jpg" alt=""><figcaption><span>Custom scenery pass</span><small>Customer build</small></figcaption></figure>
+        <figure data-type="community"><img src="img/photo-night-climb.jpg" alt=""><figcaption><span>Night session</span><small>Community</small></figcaption></figure>
+        <figure data-type="featured"><img src="img/photo-wheel-detail.jpg" alt=""><figcaption><span>Micro-rock texture, macro</span><small>Featured</small></figcaption></figure>
+        <figure data-type="community"><img src="img/photo-ridge-sunset.jpg" alt=""><figcaption><span>Ridge at golden hour</span><small>Community</small></figcaption></figure>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="page" data-route="/reviews">
+  <section class="page-hero compact">
+    <div class="bg" style="background-image:url(img/photo-sunset-climb.jpg)"></div>
+    <div class="wrap">
+      <div class="slide-text">
+        <div class="crumbs"><a href="#/">Home</a><span>/</span><span>Reviews</span></div>
+        <h1 class="h1">What crawlers say</h1>
+        <p class="lede">Verified reviews from MountainBlox customers, synced from your Shopify review app.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section on-light">
+    <div class="wrap">
+      <p class="note" style="margin-bottom:1.5rem">Layout preview. The cards below are sample placeholders showing the design real, verified reviews populate automatically from Judge.me / Shopify Reviews at launch.</p>
+      <div class="rating-sum">
+        <div><div class="big-score">4.9</div><div class="stars">★★★★★</div><div class="small muted">Sample summary</div></div>
+        <div class="bars"><div><span>5★</span><i style="--w:88%"></i><span>88%</span></div><div><span>4★</span><i style="--w:9%"></i><span>9%</span></div><div><span>3★</span><i style="--w:2%"></i><span>2%</span></div><div><span>2★</span><i style="--w:1%"></i><span>1%</span></div><div><span>1★</span><i style="--w:0%"></i><span>0%</span></div></div>
+      </div>
+      <div class="grid grid-3" style="margin-top:1.5rem">
+        <div class="review"><span class="sample">Sample</span><div class="stars">★★★★★</div><p>“Placeholder review text replaced by a verified customer review at launch.”</p><div class="who"><b>Customer name</b><span>Verified buyer · Basecamp Kit</span></div></div>
+        <div class="review"><span class="sample">Sample</span><div class="stars">★★★★★</div><p>“Placeholder review text replaced by a verified customer review at launch.”</p><div class="who"><b>Customer name</b><span>Verified buyer · Ridgeline Set</span></div></div>
+        <div class="review"><span class="sample">Sample</span><div class="stars">★★★★☆</div><p>“Placeholder review text replaced by a verified customer review at launch.”</p><div class="who"><b>Hobby store owner</b><span>Verified buyer · Squatch Mountain Set</span></div></div>
+      </div>
+      <div class="cta-row" style="margin-top:2rem"><a class="btn btn-primary" href="#/shop">Shop MountainBlox →</a><a class="btn btn-outline" href="#" data-toast="Opens the write-a-review form">Write a review</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== HOBBY STORES & VENUES ===================== -->
+<section class="page" data-route="/venues">
+  <section class="page-hero">
+    <div class="bg" style="background-image:url(img/hero-bg-4.jpg)"></div>
+    <div class="wrap">
+      <div class="slide-text">
+        <div class="crumbs"><a href="#/">Home</a><span>/</span><span>Hobby Stores &amp; Venues</span></div>
+        <span class="eyebrow">Hobby stores · RC stores · Family entertainment centers</span>
+        <h1 class="h1 h1-sm">Make your location a hobby destination</h1>
+        <p class="lede">A permanent MountainBlox landscape gives your customers a reason to come in, stay longer and come back. Stock the sets, host the League, grow the community.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="#dealer-form">Apply to become a dealer →</a><a class="btn btn-outline" href="#/contact">Ask a question</a></div>
+      </div>
+      <div class="slide-visual"><div class="framed"><img src="img/store-photo.jpg" alt="Customers driving on a MountainBlox installation inside a hobby store" width="585" height="451"></div></div>
+    </div>
+  </section>
+
+  <section class="section on-light">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Who it's for</span><h2 class="h2">Built for places people gather.</h2></div>
+      <div class="aud" style="margin-bottom:2.5rem"><span>Hobby shops</span><span>RC stores</span><span>Family entertainment centers</span><span>Skate shops</span><span>Automotive &amp; off-road shops</span><span>Event organizers</span><span>Trade shows</span><span>Content creators</span><span>Retail dealers</span><span>Commercial buyers</span></div>
+      <div class="grid grid-4">
+        <div class="card"><div class="icon-ring"><svg viewBox="0 0 24 24"><path d="M3 17l6-9 4 6 3-4 5 7H3z"/></svg></div><h3 class="h4">Larger installations</h3><p>Squatch Mountain Sets combine into table-size courses. Rearrange them for a new look each month.</p></div>
+        <div class="card"><div class="icon-ring"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v5h5"/></svg></div><h3 class="h4">Repeat visits</h3><p>New climbs, new routes, new gates customers come back to beat last week's time.</p></div>
+        <div class="card"><div class="icon-ring"><svg viewBox="0 0 24 24"><path d="M4 7h16v13H4z"/><path d="M8 4v3M16 4v3M4 11h16"/></svg></div><h3 class="h4">Events</h3><p>Crawl nights, build sessions, demo days and birthday packages built around the course.</p></div>
+        <div class="card"><div class="icon-ring"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M6 4h12v4a6 6 0 0 1-12 0V4z"/><path d="M6 6H3v2a3 3 0 0 0 3 3M18 6h3v2a3 3 0 0 1-3 3"/></svg></div><h3 class="h4">League opportunities</h3><p>Become an official MountainBlox League venue and host sanctioned heats with a global leaderboard.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">How it works</span><h2 class="h2">From inquiry to opening night.</h2></div>
+      <div class="steps">
+        <div class="step"><b>Apply</b><span>Tell us about your space and customers. We reply within two business days.</span></div>
+        <div class="step"><b>Choose your installation</b><span>From a retail display and Basecamp Kits on the shelf to a full Squatch Mountain course.</span></div>
+        <div class="step"><b>Build it together</b><span>Layout guides, marketing assets and launch support from the HobbyBlox team.</span></div>
+        <div class="step"><b>Host the League</b><span>Run heats, post times, and keep customers coming back.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-light" id="dealer-form">
+    <div class="wrap contact-grid">
+      <div class="stack copy">
+        <span class="eyebrow">Dealer &amp; venue inquiry</span>
+        <h2 class="h2">Let's talk about your location.</h2>
+        <p>Retail dealers, FECs, creators and event organizers all start here. Tell us what you're planning and we'll come back with options and pricing.</p>
+        <div class="contact-list">
+          <div class="row"><b>Email</b><a href="mailto:support@mountainblox.com">support@mountainblox.com</a></div>
+          <div class="row"><b>Creators &amp; affiliates</b><span class="small">Content creators and affiliates: mention your channel in the message and we'll follow up with the program details.</span></div>
+        </div>
+      </div>
+      <form class="form" data-toast="Thanks we'll be in touch within two business days (prototype)">
+        <div class="two"><div><label class="lbl" for="d-name">Name</label><input class="input" id="d-name" type="text" required></div><div><label class="lbl" for="d-biz">Business</label><input class="input" id="d-biz" type="text" required></div></div>
+        <div class="two"><div><label class="lbl" for="d-email">Email</label><input class="input" id="d-email" type="email" required></div><div><label class="lbl" for="d-type">Location type</label><select class="input" id="d-type"><option>Hobby shop</option><option>RC store</option><option>Family entertainment center</option><option>Skate shop</option><option>Automotive / off-road shop</option><option>Event organizer / trade show</option><option>Content creator</option><option>Other commercial buyer</option></select></div></div>
+        <div><label class="lbl" for="d-msg">What are you planning?</label><textarea class="input" id="d-msg" placeholder="Space size, customers, timing…"></textarea></div>
+        <div><button class="btn btn-primary" type="submit">Send inquiry →</button></div>
+      </form>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="page" data-route="/contact">
+  <section class="page-hero compact">
+    <div class="bg" style="background-image:url(img/bg-night-2.jpg)"></div>
+    <div class="wrap">
+      <div class="slide-text">
+        <div class="crumbs"><a href="#/">Home</a><span>/</span><span>Contact</span></div>
+        <h1 class="h1">Talk to HobbyBlox</h1>
+        <p class="lede">Orders, products, dealer questions or League details we read everything.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section on-light">
+    <div class="wrap contact-grid">
+      <form class="form" data-toast="Message sent we'll reply within two business days (prototype)">
+        <div class="two"><div><label class="lbl" for="c-name">Name</label><input class="input" id="c-name" type="text" required></div><div><label class="lbl" for="c-email">Email</label><input class="input" id="c-email" type="email" required></div></div>
+        <div><label class="lbl" for="c-topic">Topic</label><select class="input" id="c-topic"><option>Order or shipping</option><option>Product question</option><option>Hobby store / venue</option><option>MountainBlox League</option><option>Press &amp; creators</option><option>Something else</option></select></div>
+        <div><label class="lbl" for="c-msg">Message</label><textarea class="input" id="c-msg"></textarea></div>
+        <div><button class="btn btn-primary" type="submit">Send message →</button></div>
+      </form>
+      <div class="stack">
+        <div class="contact-list">
+          <div class="row"><b>Email</b><a href="mailto:support@mountainblox.com">support@mountainblox.com</a></div>
+          <div class="row"><b>Hours</b><span class="small">Monday – Friday, replies within two business days</span></div>
+          <div class="row"><b>Dealers &amp; venues</b><a href="#/venues">Hobby Stores &amp; Venues →</a></div>
+          <div class="row"><b>Quick answers</b><span class="small">Shipping from the USA in 1–3 business days · 30-day returns on unused items · 1/24 &amp; 1/18 scale</span></div>
+        </div>
+        <div class="photo-frame frame"><img src="img/photo-squatch-climb.jpg" alt="Crawler on a MountainBlox climb" style="aspect-ratio:4/3"></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="img/logo-hobbyblox-dark.png" alt="HobbyBlox">
+        <p>Blox are terrain pieces that come together to create immersive worlds for your hobby. Start small, rearrange endlessly, expand forever.</p>
+        <span class="mono" style="color:var(--gold)">Designing immersive worlds.</span>
+        <div class="social">
+          <a href="#" aria-label="YouTube" data-toast="YouTube · @MountainBlox_Official"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.2zM9.8 15.2V8.8l6 3.2-6 3.2z"/></svg></a>
+          <a href="#" aria-label="Facebook" data-toast="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.4H7.4V14h2.8v8h3.3z"/></svg></a>
+          <a href="#" aria-label="Instagram" data-toast="Instagram · @mountainblox"><svg viewBox="0 0 24 24"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.9-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21 8.2c-.1-1.5-.4-2.8-1.5-3.9S17.1 2.9 15.6 2.8C14.1 2.7 9.9 2.7 8.4 2.8 6.9 2.9 5.6 3.2 4.5 4.3S3.1 6.7 3 8.2c-.1 1.5-.1 5.9 0 7.4.1 1.5.4 2.8 1.5 3.9s2.4 1.4 3.9 1.5c1.5.1 5.9.1 7.4 0 1.5-.1 2.8-.4 3.9-1.5s1.4-2.4 1.5-3.9c.1-1.5.1-5.9 0-7.4zm-2 9.1a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.3.4s-4.1.1-5.3-.4a3 3 0 0 1-1.7-1.7c-.5-1.2-.4-4-.4-5.3s-.1-4.1.4-5.3A3 3 0 0 1 6.7 5c1.2-.5 4-.4 5.3-.4s4.1-.1 5.3.4A3 3 0 0 1 19 6.7c.5 1.2.4 4 .4 5.3s.1 4.1-.4 5.3z"/></svg></a>
+          <a href="#" aria-label="TikTok" data-toast="TikTok"><svg viewBox="0 0 24 24"><path d="M16.5 3c.3 2.3 1.6 3.7 3.8 3.9v3.1c-1.3.1-2.5-.3-3.8-1.1v6.6c0 8.4-9.2 11-12.9 5-2.4-3.9-.9-10.7 6.7-11v3.3c-.6.1-1.2.2-1.7.4-1.7.6-2.6 1.6-2.4 3.5.5 3.6 7.1 4.6 6.6-2.4V3h3.7z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Our Brands</h4><ul><li><a href="#/mountainblox">MountainBlox</a></li><li><a href="#/fingerblox">FingerBlox</a></li><li><a href="#/driftingblox">DriftingBlox</a></li><li><a href="#/league">MountainBlox League</a></li><li><a href="#/brands">Future brands</a></li></ul></div>
+      <div class="foot-col"><h4>HobbyBlox</h4><ul><li><a href="#/about">About</a></li><li><a href="#/shop">Shop</a></li><li><a href="#/instructions">Instruction Center</a></li><li><a href="#/gallery">Gallery</a></li><li><a href="#/reviews">Reviews</a></li></ul></div>
+      <div class="foot-col"><h4>Stores &amp; Venues</h4><ul><li><a href="#/venues">Become a dealer</a></li><li><a href="#/venues">Family entertainment centers</a></li><li><a href="#/venues">Content creators</a></li><li><a href="#/venues">Events &amp; trade shows</a></li></ul></div>
+      <div class="foot-col"><h4>Support</h4><ul><li><a href="#/contact">Contact</a></li><li><a href="#/mountainblox">FAQ</a></li><li><a href="#/instructions">Layout PDFs</a></li><li><a href="#/contact">Shipping &amp; returns</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 HobbyBlox. All rights reserved. MountainBlox™, FingerBlox™, DriftingBlox™.</span>
+      <div class="pay"><span>Amex</span><span>Apple Pay</span><span>Discover</span><span>G Pay</span><span>Mastercard</span><span>PayPal</span><span>Shop Pay</span><span>Venmo</span><span>Visa</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== REVIEW NOTES (round-2 checklist) ===================== -->
+<button type="button" class="notes-btn" id="notes-btn">Round 2 notes <span aria-hidden="true">↗</span></button>
+<aside class="notes" id="notes" aria-label="Round 2 review notes">
+  <button type="button" class="close" id="notes-close">Close ✕</button>
+  <h3 class="h3">How this build answers Steve's notes</h3>
+  <p class="small muted">Tap any item to jump to it. Every page is linked from the navigation.</p>
+  <ol>
+    <li><b><span class="ok">Done</span>Story is for hobbyists &amp; store owners</b>Company-structure copy moved to <a href="#/about">About</a>; homepage now reads hero → Blox definition → brands → MountainBlox in action → stores &amp; venues → footer.</li>
+    <li><b><span class="ok">Done</span>Rotating 4-slide hero</b>HobbyBlox · MountainBlox · League · Stores &amp; FECs, with consistent text placement, visible prev/next, dots, pause, an 8-second progress bar, and pause on hover. <a href="#/">Home</a></li>
+    <li><b><span class="ok">Done</span>Blox definition replaces the spec row</b>"Blox are terrain pieces that come together to create immersive worlds for your hobby" sits stationary under every slide. No hexagon / interlocking / all-modular claims anywhere on the homepage.</li>
+    <li><b><span class="ok">Done</span>New scrolling line</b>Build your world • Bring your hobby to life • Create your next challenge • Join a Blox League • The terrain that connects us.</li>
+    <li><b><span class="ok">Done</span>Brand cards kept, labels fixed</b>MountainBlox = Available now; FingerBlox &amp; DriftingBlox = Under development; RailwayBlox &amp; QuarryBlox = Future brand, all concept imagery tagged. <a href="#home-brands">Cards</a></li>
+    <li><b><span class="ok">Done</span>"Bring your crawling world to life" section</b>Your copy verbatim, Shop MountainBlox + Explore the League CTAs, real MBX photography. <a href="#home-mbx">Section</a></li>
+    <li><b><span class="ok">Done</span>Removed</b>"Different hobbies, one system", "MountainBlox proved the model", "One success fuels the next" and the future-brand carousel.</li>
+    <li><b><span class="ok">Done</span>Concise stores &amp; FECs section</b>Installations, repeat visits, events, League. <a href="#home-venues">Section</a> · full page at <a href="#/venues">Hobby Stores &amp; Venues</a>.</li>
+    <li><b><span class="ok">Done</span>Imagery</b>Real MountainBlox photos for the feature and MBX page; your renders for the hero; FingerBlox pool render (one pool, not a skate park); DriftingBlox concept image from your mark-up, tagged as concept until the new version arrives.</li>
+    <li><b><span class="ok">Done</span>Navigation</b>"B2B" → "Hobby Stores &amp; Venues"; "Home" folded into the logo; menu text enlarged; Our Brands opens a visual brand preview with status labels and a League link.</li>
+    <li><b><span class="ok">Ready</span>Remaining SOW pages</b>About · Our Brands · MountainBlox · FingerBlox · DriftingBlox · League · Shop · Product · Instruction Center · Gallery · Reviews · Venues · Contact all built on the same system so Shopify sections carry over 1:1.</li>
+  </ol>
+  <p class="small muted">Prototype notes: buttons marked "(prototype)" show a toast instead of running Shopify actions. Review cards are labeled samples until the review app is connected. Prices are from the live MountainBlox store today.</p>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
