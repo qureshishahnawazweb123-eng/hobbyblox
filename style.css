@@ -257,7 +257,7 @@ p{margin:0}
 .on-light .point b{color:var(--plum)}
 .on-light .point span{color:var(--muted-light)}
 .photo-frame{position:relative}
-.photo-frame img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.photo-frame img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover}
 .photo-frame .cap{position:absolute;left:.8rem;bottom:.8rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(13,15,23,.65);padding:.35rem .55rem}
 
 /* ---------- Signup strip ---------- */
